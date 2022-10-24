@@ -12,7 +12,7 @@ import React from 'react'
 
 function Task() {
     return (
-        <div>
+        <div className='task'>
             <h2>Task title</h2>
             <h2>ID: </h2>
             <p>Description : </p>
