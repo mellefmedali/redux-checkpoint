@@ -1,0 +1,28 @@
+.task{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 5px;
+    border: 1px solid blue;
+    box-shadow: 5px 5px 10px grey;
+    background-color: rgb(193, 255, 255);
+    width: 150px;
+    height: 200px;
+    margin: 5px;
+}
+
+.taskId{
+    margin-top: 0;
+    background-color: aqua;
+}
+.description{
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 5px;
+}
+.isDone{
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: center;
+    background-color: aliceblue;
+}
