@@ -6,7 +6,7 @@
 //   reducer: {},
 // })
 
-// ----------------------------------
+// ############################################################
 // STEP 2 : Provide the Redux Store to React
 // index.js
 
@@ -18,7 +18,7 @@
 //   </Provider>,
 // )
 
-// ----------------------------------
+// ############################################################
 // STEP 3 : Create a Redux State Slice
 // Add a new file named counterSlice.js
 // import { createSlice } from '@reduxjs/toolkit'
@@ -49,7 +49,7 @@
 // export const { increment, decrement, incrementByAmount } = counterSlice.actions
 // export default counterSlice.reducer
 
-// ----------------------------------------------------------------------
+// ###############################################################################
 // STEP 4: Add Slice Reducers to the Store
 // in store.js
 
@@ -62,6 +62,7 @@
 //   },
 // })
 
+// ###############################################################################
 // STEP 5 : Use Redux State and Actions in React Components
 // in any component you need "supposed : Counter.js" 
 

@@ -1,14 +1,15 @@
 import './App.css';
-import AddTask from './components/AddTask';
 import Counter from './components/counter';
-import { ListTask } from './components/ListTask';
-import Task from './components/Task';
+import  listSlice from './components/listSlice';
+import List from './components/list';
 
 function App() {
+
   return (
     <div className="App">
-      <Counter />
-      {/* {ListTask.map(e => <Task key={e.id} list={e} />)} */}
+      {/* <Counter /> */}
+      <List/>
+      {/* {map(e => <Task key={e.id} list={e} />)} */}
     </div>
   );
 }
