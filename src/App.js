@@ -1,10 +1,12 @@
 import './App.css';
+import AddTask from './components/AddTask';
 import { ListTask } from './components/ListTask';
 import Task from './components/Task';
 
 function App() {
   return (
     <div className="App">
+      <AddTask/>
       {ListTask.map(e => <Task key={e.id} list={e}/>)}
     </div>
   );
