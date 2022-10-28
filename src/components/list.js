@@ -2,32 +2,20 @@ import { useSelector, useDispatch } from 'react-redux'
 import './list.css'
 import { list, addTask } from './listSlice'
 import Task from "./Task"
-import { addDescription } from './descriptionSlice'
 import { useState } from 'react'
 
 
 export default function List() {
     const taskList = useSelector((state) => state.taskList.value)
-    const description = useSelector((state) => state.description.value)
-    const dispatch = useDispatch()
-    const [okFilter, setOkfilter] = useState(false)
+    // const description = useSelector((state) => state.description.value)
+    const [description, setDescription] = useState("")
 
-    const handleDone = () => {setOkfilter = true}
-    const handleNotDone = () => {setOkfilter = false}
-    
+    const dispatch = useDispatch()
+
     return (
         <div>
             <form>
-                <div className='filter'>
-                    {/* <input type="checkbox" id="done" name="done" value={okFilter} /> */}
-                    {/* <label >{okFilter}</label><br /> */}
-                    {/* <input type="checkbox" id="notyet" name="notyet" value="notyet" /> */}
-                    {/* <label >Waiting Tasks</label><br /> */}
-                    <button onClick={handleDone}>Show Done</button>
-                    <button onClick={handleNotDone}>Show Not Yet Done</button>
-                </div>
-                <input id='description' type='text' placeholder='inset your note' name='description' onChange={(event) => dispatch(addDescription(event.target.value))} />
-                <br />
+                <input id='description' type='text' placeholder='inset your note' name='description' onChange={(event) => {setDescription(event.target.value)}} />
             </form>
             <button onClick={() => dispatch(addTask(
                 {
@@ -39,7 +27,7 @@ export default function List() {
                 ADD TASK !
             </button>
             <div className='taskList'>
-                {taskList.filter((e) => (e.isDone == {okFilter})).map(
+                {taskList.map(
                     (e) => <Task key={e.id} list={e} />
                 )}
 
