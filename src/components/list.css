@@ -2,3 +2,8 @@
     display: flex;
     flex-wrap: wrap;
 }
+.filter{
+    display: flex;
+    justify-content: center;
+
+}

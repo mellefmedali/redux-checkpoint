@@ -1,18 +1,45 @@
 import { createSlice } from "@reduxjs/toolkit"
 
 const initialState = {
-    value: [{id:1, description:"test", isDone:true}]
+    value: [
+        { id: 1, description: "test", isDone: true },
+        { id: 2, description: "test 2", isDone: false }
+    ]
 }
 
-export const listSlice = createSlice( {
-    name : "list",
+export const listSlice = createSlice({
+    name: "list",
     initialState,
-    reducers:{
-        addTask : (state,action) => {state.value = [...state.value,action.payload]},
-        changeIsDone : (state, action) => {state.value = action.payload}
-        // taskList.value[id - 1].isDone
+    reducers: {
+        addTask: (state, action) => { state.value = [...state.value, action.payload] },
+        changeIsDone: {
+            reducer(state, action) {
+                state.value[action.payload.id - 1].isDone = action.payload.isDone
+            },
+            prepare(id, isDone) {
+                return {
+                    payload: {
+                        id,
+                        isDone
+                    }
+                }
+            }
+        },
+        changeDescription : {
+            reducer(state, action){
+                state.value[action.payload.id-1].description = action.payload.description
+            },
+            prepare(id, description) {
+                return{
+                    payload:{
+                        id,
+                        description
+                    }
+                }
+            }
+        }
     }
 })
 
-export const {addTask, changeIsDone} = listSlice.actions
+export const { addTask, changeIsDone } = listSlice.actions
 export default listSlice.reducer
