@@ -1,5 +1,4 @@
 import './App.css';
-import Counter from './components/counter';
 import  listSlice from './components/listSlice';
 import List from './components/list';
 
@@ -7,9 +6,7 @@ function App() {
 
   return (
     <div className="App">
-      {/* <Counter /> */}
       <List/>
-      {/* {map(e => <Task key={e.id} list={e} />)} */}
     </div>
   );
 }

@@ -41,5 +41,5 @@ export const listSlice = createSlice({
     }
 })
 
-export const { addTask, changeIsDone } = listSlice.actions
+export const { addTask, changeIsDone, changeDescription } = listSlice.actions
 export default listSlice.reducer
