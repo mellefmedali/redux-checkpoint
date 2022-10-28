@@ -14,20 +14,23 @@ export default function List() {
 
     return (
         <div>
-            <form>
-                <input id='description' type='text' placeholder='inset your note' name='description' onChange={(event) => {setDescription(event.target.value)}} />
-            </form>
-            <button onClick={() => dispatch(addTask(
-                {
-                    id: taskList.length + 1,
-                    description: description,
-                    isDone: false
-                }
-            ))}>
-                ADD TASK !
-            </button>
+            <div className='newTask'>
+                <form>
+                    <input id='description' type='text' placeholder='inset your note' name='description' onChange={(event) => { setDescription(event.target.value) }} />
+                </form>
+                <button onClick={() => dispatch(addTask(
+                    {
+                        id: taskList.length + 1,
+                        description: description,
+                        isDone: false
+                    }
+                ))}>
+                    ADD TASK !
+                </button>
+            </div>
             <div className='taskList'>
-                {taskList.map(
+                {/* reste a chager false par une variable */}
+                {taskList.filter((e)=>(e.isDone==false)).map(
                     (e) => <Task key={e.id} list={e} />
                 )}
 

@@ -15,19 +15,22 @@ function Task(props) {
 
 
     return (
-        <div className='task'>
-            <h3 className='taskId'>N° : {id}</h3>
+        <div className='task' >
+            <h3 className='taskId' onClick={handlDescriptionClick}>n:{id}</h3>
             <p className="description" onClick={handlDescriptionClick}
-            >{description}</p>
-            <div style={{visibility:showDesc}}>
+            >{description}
+            </p>
+            <div style={{visibility:showDesc}} className='edit'>
             <input  onChange={(e) => { setNewDesc(e.target.value) }}/>
             <button onClick={
                 () => { 
                     dispatch(changeDescription(id, newDesc))
                     handlDescriptionClick()
                 }
-            }>V</button>
+            }>edit</button>
+            
             </div>
+            
             <button className='isDone'  onClick={
                 () => { dispatch(changeIsDone(id, !isDone)) }
             }

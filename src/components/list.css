@@ -2,8 +2,10 @@
     display: flex;
     flex-wrap: wrap;
 }
-.filter{
+.newTask{
     display: flex;
     justify-content: center;
-
+    margin: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px dotted lightblue;
 }
