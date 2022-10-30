@@ -11,6 +11,7 @@ export const listSlice = createSlice({
     name: "list",
     initialState,
     reducers: {
+        filterList : (state, action) => {state.value = action.payload},
         addTask: (state, action) => { state.value = [...state.value, action.payload] },
         changeIsDone: {
             reducer(state, action) {
@@ -41,5 +42,5 @@ export const listSlice = createSlice({
     }
 })
 
-export const { addTask, changeIsDone, changeDescription } = listSlice.actions
+export const { addTask, changeIsDone, changeDescription, filterList } = listSlice.actions
 export default listSlice.reducer
